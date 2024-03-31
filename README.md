@@ -1,9 +1,9 @@
 # Discord Token Protector
-#### Protect your Discord token from malicious grabbers!
+#### Proteja seu token do Discord contra capturadores maliciosos!
 
-## [For NTTS viewers here's my response to the video](NTTS.md)
+## [Para os espectadores do NTTS, aqui está minha resposta ao vídeo.](NTTS.md)
 
-##### ✔️ **Works with the latest version of Discord**
+##### ✔️ **Funciona com a versão mais recente do Discord.**
 
 ![Main Workflow](https://github.com/andro2157/DiscordTokenProtector/actions/workflows/msbuild.yml/badge.svg)
 
@@ -11,122 +11,79 @@
   <img width="500" src="Assets/DiscordTokenProtectorUI.png">
 </p>
 
-This project is still under development! You might face some instability issues!\
-This is in **NO** way a perfect solution against Discord token grabbers.
-But this will protect you against most token grabbers:
-- (Most common) LevelDB reading *(from the beginning)*
-- (Less common) Script injection / Discord module tampering *(from dev-6)*
-- (Rare) Memory reading *(from dev-8)*
+Este projeto ainda está em desenvolvimento! Você pode enfrentar alguns problemas de instabilidade!\
+Esta **NÃO** é de forma alguma uma solução perfeita contra capturadores de tokens do Discord.
+Mas isso vai te proteger contra a maioria dos capturadores de tokens:
+- (Mais comum) Leitura do LevelDB *(desde o início)*
+- (Menos comum) Injeção de script / Manipulação do módulo do Discord *(a partir de dev-6)*
+- (Raro) Leitura de memória *(a partir de dev-8)*
 
-**Any targeted attack against DiscordTokenProtector can bypass this protection!**
+**Qualquer ataque direcionado contra o DiscordTokenProtector pode contornar essa proteção!**
 
-## [✔️Good practices when using DTP](goodpractice.md)
+## [✔️Práticas recomendadas ao usar o DiscordTokenProtector (DTP)](goodpractice.md)
 
-### ⚠️ Disclaimer
-**DTP is not affiliated with Discord.**\
-**DTP is in NO way responsible for what can happen on your Discord account.**\
-**Chances of getting terminated using DTP are very low, but please keep in mind that using third-party software is against Discord's TOS.**
+### ⚠️ Aviso Legal
+**O DTP não possui afiliação com o Discord.**\
+**O DTP não se responsabiliza de forma alguma pelo que pode acontecer em sua conta do Discord.**\
+**As chances de ser banido ao usar o DTP são muito baixas, mas por favor, tenha em mente que o uso de software de terceiros é contra os Termos de Serviço do Discord.**
 
 
-## Features
+## Recursos
 
-#### ✅ Protect your self from most token grabbers
-#### ✅ Securely store your Discord token in an encrypted file (YubiKeys* are supported)
-#### ✅ Switch easily between multiple accounts
-#### ✅ Change your Discord password in one-click
-#### ✅ Check the integrity of your Discord installation on launch (BetterDiscord is supported)
-#### ✅ Check scripts for known malwares *(eg AnarchyGrabber3)*
-#### ✅ Protect the Discord process from memory reading / code injection
-#### ✅ Protect DTP from tampering attacks (protects the process/config from unauthorized users)
+#### ✅ Proteja-se contra a maioria dos capturadores de tokens
+#### ✅ Armazene seu token do Discord de forma segura em um arquivo criptografado (YubiKeys* são suportados)
+#### ✅ Troque facilmente entre várias contas
+#### ✅ Altere sua senha do Discord com um clique
+#### ✅ Verifique a integridade da sua instalação do Discord ao iniciar (BetterDiscord é suportado)
+#### ✅ Verifique scripts em busca de malwares conhecidos *(por exemplo, AnarchyGrabber3)*
+#### ✅ Proteja o processo do Discord contra leitura de memória / injeção de código
+#### ✅ Proteja o DTP contra ataques de manipulação (protege o processo/configuração contra usuários não autorizados)
 
-**Except from YubiKey NEO*
+**Exceto pelo YubiKey NEO*
 
-## Installation / Update
+## 
+Instalação / Atualização
 
-### Download the latest release **[HERE](https://github.com/andro2157/DiscordTokenProtector/releases)**
+### Baixe a versão mais recente. **[HERE](https://github.com/andro2157/DiscordTokenProtector/releases)**
 
-* Start DiscordTokenProtectorSetup.exe
-* Select between Normal and NoStartup installation
-* **[Set it up](Setup.md)**
-* ([YubiKey Setup Guide](YubiSetup.md))
-* Enjoy!
+* Inicie o DiscordTokenProtectorSetup.exe
+* Selecione entre a instalação Normal e Sem Inicialização
+* **[Configure-o](Setup.md)**
+* ([Guia de Configuração do YubiKey](YubiSetup.md))
+* Aproveite!
 
-## What does it do?
+## O que o DiscordTokenProtector faz?
 
-Here's a little diagram of how it works:
+Aqui está um pequeno diagrama de como funciona:
 
 <p align="center">
   <img width="800" src="Assets/how_does_it_work.jpg">
 </p>
 
-It removes the `Local Storage` and `Session Storage` directories from `%appdata%\Discord`.
-These directories can store your Discord token (used to authenticate you).
-Most of the grabbers look for your token there. Therefore, by removing these directories you can avoid getting grabbed.\
-Your Discord token is stored in a secure container encrypted with AES-256.
 
-## Some stuff to consider
+* Ele remove os diretórios Local Storage e Session Storage de %appdata%\Discord.
+Esses diretórios podem armazenar seu token do Discord (usado para autenticá-lo).
+A maioria dos capturadores procura pelo seu token lá. Portanto, removendo esses diretórios, você pode evitar que ele seja capturado.
+Seu token do Discord é armazenado em um contêiner seguro criptografado com AES-256.
 
-* By removing these directories, Discord cannot store any local settings.
-Meaning that all of your client-specific settings will be removed each time you start Discord. (eg. keybinds, default audio device, ...)\
-**BUT**, all of the server-side settings are still saved. (users descriptions, language, dark mode, ...)
+## Algumas coisas a considerar:
 
-* Discord canary might not work properly. These builds don't support handoff login.
+* Ao remover esses diretórios, o Discord não pode armazenar nenhuma configuração local.
+Isso significa que todas as configurações específicas do cliente serão removidas cada vez que você iniciar o Discord (por exemplo, atalhos de teclado, dispositivo de áudio padrão, ...).
+MAS, todas as configurações do lado do servidor ainda são salvas (descrições de usuários, idioma, modo escuro, ...).
 
-* Again, this is a project in development, and you might face some instabilities (crash, discord not launching, ...). Please report these issues on this repo.
+* O Discord Canary pode não funcionar corretamente. Essas versões não suportam login de passagem.
 
-* Some anti-virus flags DiscordTokenProtector because it can start with Windows and it can inject payload into Discord.
-These activities are suspicious for AVs. I provided builds without the auto-startup, it reduces the amount of false-flag.
+* Novamente, este é um projeto em desenvolvimento e você pode encontrar algumas instabilidades (crash, Discord não iniciando, ...). Por favor, relate esses problemas neste repositório.
 
-* DiscordTokenProtector doesn't seem to work well on Windows 7
+* Alguns antivírus sinalizam o DiscordTokenProtector porque ele pode iniciar com o Windows e injetar payload no Discord.
+Essas atividades são suspeitas para os AVs. Eu forneci versões sem inicialização automática, o que reduz a quantidade de sinalizações falsas.
 
-* Integrity check hashes are uploaded manually, therefore you might get an error message saying that it's unable to get the hashes. Please open a ticket if it says so!
+* O DiscordTokenProtector parece não funcionar bem no Windows 7.
 
-## Compilation
+* A verificação de integridade dos hashes é feita manualmente, portanto, você pode receber uma mensagem de erro dizendo que não é possível obter os hashes. Por favor, abra um ticket se isso acontecer!
 
-To compile, it's recommended to use [vcpkg](https://github.com/microsoft/vcpkg) for the libraries
-
-### Step 1: Installing vcpkg
-*You can skip this step if you already have it*
-```
-git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-bootstrap-vcpkg.bat -disableMetrics
-```
-Start a new cmd as admin in the `vcpkg` folder and type:
-```
-vcpkg integrate install
-```
-
-### Step 2: Installing the libraries
-Copy and paste this (in the vcpkg directory if you don't have it in the PATH)
-```
-vcpkg install imgui:x86-windows-static imgui[glfw-binding]:x86-windows-static imgui[opengl3-binding]:x86-windows-static imgui[glfw-binding]:x86-windows-static imgui[win32-binding]:x86-windows-static nlohmann-json:x86-windows-static cryptopp:x86-windows-static curl[openssl]:x86-windows-static polyhook2:x86-windows-static gl3w:x86-windows-static
-```
-*This process might take some time as it's building these libraries (for the static link)*
-
-### Step 3: Cloning DiscordTokenProtector
-```
-git clone https://github.com/andro2157/DiscordTokenProtector
-```
-
-### Step 4: Open the project in VS
-Open `DiscordTokenProtector.sln`
-
-Everything should be setup, you just need to compile it with the `PROD` or `PROD-NOSTARTUP` config in **x86**.
-
-### (Optional) Step 5: Compile with YubiKey support
-* Download the latest yubico-piv-tool source code here: https://developers.yubico.com/yubico-piv-tool/Releases/ \
-**Don't clone from the repo, it won't compile on Windows!**
-* Follow the instructions [here](https://github.com/Yubico/yubico-piv-tool#building-on-windows) to create the project.
-* Open the generated .sln file in Visual Studio.
-* Open the properties of the `ykpiv` project.
-* Go to `C++` > `Code Generation`, and change the `Runtime Library` from `Multi-threaded DLL (/MD)` to `Multi-threaded (/MT)`
-* Compile
-* By default, the `PROD-YUBI(-NOSTARTUP)` config will look for the library and the headers in `C:\Program Files (x86)\Yubico\Yubico PIV Tool\` (default installation path of the PIV tool). You can move them here or change the path in the DTP project properties.
-
-*Note : C++17 is required to compile.*
-
-## Credit
+## Créditos
 
 * [Discord](https://discord.com/)
 * Ocornut for [ImGui](https://github.com/ocornut/imgui)
@@ -138,6 +95,6 @@ Everything should be setup, you just need to compile it with the `PROD` or `PROD
 
 ## Donation
 
-If you would like to support this project by donating, you can do it through:
+Se você gostaria de apoiar este projeto fazendo uma doação, você pode fazer isso através de:
 * [Brave Browser](https://brave.com/) tips
 * Crypto (ETH / BSC) 0x6997878c19ab249AEbc523635f09B95b793AfA5D
